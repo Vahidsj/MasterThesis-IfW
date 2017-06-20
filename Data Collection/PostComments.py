@@ -6,11 +6,11 @@ import smtplib
 
 
 # You should paste your access_token here. You need the long-lived access token >>> See Instruction 2.2.
-access_token = 'EAAI6JhLteM8BAH3d2JysTOjZAZCZAkbZC9WRZBZC4jZCZBfKhulzZCMmCfB0Gl38wWiYbFmJsYrDWPcdyZA40QWT7GNZCgnwTLdZAQHfOsW8erFLWPz6ZBiZAkTacKT0swirPmUbid6pJarbYgyEjYn2Y7g7J5IcnDEhOh5T8ZD'
+access_token = 'YOUR ACCESS TOKEN'
 graph = facebook.GraphAPI(access_token, version='2.7')
 
 # Paste the file address of CSV files, Remeber the Slash and Back Slash
-file_address = "C:/Users\Vahid\Desktop\New folder (6)"
+file_address = "C:/Users\Vahid\Desktop\..."
 
 for filename in os.listdir(str(file_address)):
     
