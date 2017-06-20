@@ -8,7 +8,8 @@ import time
 import os
 
 
-access_token = 'EAAbLDmN3bu0BAPuOAXQwZBJJsUZBBxdMZBuTcZAe5ZCBYDFwb7hYlDZA7CUcbkD5ohrUmQlJSqVXaKI3QKeGrDqesywlrlT378XQDBXCuWfxp6MzIJmWHZAMkZCuFoybTIWBR9UNR00WhXMXZAAjP7QoQabxZAKmvp67kZD'
+# You should paste your access_token here. You need the short lived access token , because we don't have version 2.3 of the long lived access token. post_query function works faster with this version. >>> See Instruction 1.
+access_token = 'YOUR ACCESS TOKEN'
 graph = facebook.GraphAPI(access_token, version='2.6')
 
 irrelevant_categories = ['Coach', 'Business Service', 'Sports Team', 'Consulting/Business Service', 'Electronics', 'Local Business', 'Real Estate', 'Internet/Software',
@@ -37,9 +38,9 @@ irrelevant_categories = ['Coach', 'Business Service', 'Sports Team', 'Consulting
 
 
 
-for filename in os.listdir('C:/Users/Navid/Desktop/Relevant Pages-unmodified'):
+for filename in os.listdir('C:/Users/Vahid/Desktop/...'):
     
-    LikePages = Table.read_table("C:/Users/Navid/Desktop/Relevant Pages-unmodified/"+str(filename), encoding="ISO-8859-1")
+    LikePages = Table.read_table("C:/Users/Vahid/Desktop/Relevant Pages-unmodified/"+str(filename), encoding="ISO-8859-1")
 
     IDS = LikePages.column(0)
     page_liked_name = LikePages.column(1)
@@ -155,12 +156,13 @@ for filename in os.listdir('C:/Users/Navid/Desktop/Relevant Pages-unmodified'):
         except Exception as e:
             
             Problematic_Page_IDs.append(str(p_id))
+            # Send an E-Mail >>> See Instruction 3.1.
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.ehlo()
             server.starttls()
-            server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-            msg = "Hi,\n\n"+ str(e) +"\nDetecting relevant Pages --->>> There is a problem, please COME TO ME!\n\n||Vahid S. J.||"
-            server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+            server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
+            msg = "Hi,\n\n Page-Posts >>> Please paste a new Access Token!\n\n||Vahid S. J.||"
+            server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
             server.quit()
             time.sleep(120)
 
@@ -176,12 +178,13 @@ for filename in os.listdir('C:/Users/Navid/Desktop/Relevant Pages-unmodified'):
 
     LIKED_PAGES.to_csv(str(filename))
      
+    # Send an E-Mail >>> See Instruction 3.1.
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
+    server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
      
     msg = "Hi,\n\nDetecting relevant Pages --->>> DONE!\nFor this Page: "+str(filename)+"\n\n||Vahid S. J.||"
 
-    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+    server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
     server.quit()
