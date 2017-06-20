@@ -10,7 +10,7 @@ This project work was designed and developed as a project to:
 **3. Visualize**<br />
 **4. Communicate Data**
 
-Main Targets of the project were:
+Main Targets of the project were:<br />
 **•	Data Collection and Storage:** Collecting relevant Facebook Comments, Post Descriptions, Attachments, Likes, etc. using Python<br />
 **• Recognition of relevant Facebook Pages:** Use of Network Nodes (Liked Pages by Pages) to recognize relevant Facebook Pages<br />
 **• Data Pre-Processing and Cleansing:** Design of Spelling Corrector using Python<br />
@@ -20,4 +20,4 @@ Main Targets of the project were:
 **•**	Comparing the sentiments per state, city and gender of users as well as time of the comments<br />
 **•**	Visualizing and Communicating the Results
 
-Gathering Data<h1>
+Gathering Data<h4>
