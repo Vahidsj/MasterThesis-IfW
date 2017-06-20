@@ -47,7 +47,7 @@ In the following figure, the process of data collection has been showed:
 
 ![Gathering Data](https://github.com/Vahidsj/ProjectWork-IfW/blob/master/Image/Gathering%20Data.png)
 
-###Data Pipeline: ###
+### Data Pipeline: ###
 
 The visual below is an overview of our data pipeline for this project:
 
