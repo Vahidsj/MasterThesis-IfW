@@ -5,7 +5,7 @@ import urllib
 from urllib import request
 import os
 
-table = Table.read_table('C:/Users\Vahid\Desktop/UserID.csv')
+table = Table.read_table('C:/Users/Vahid/Desktop/...')
 user_ids_modified = table.column(0)
 
 user_ids = []
@@ -14,7 +14,8 @@ user_ids = [str(i[1:len(i)-1]) for i in user_ids_modified]
 # change the directory
 os.chdir("D:/Profile Pictures - Facebook")
 
-access_token = 'EAAI6JhLteM8BAEEXVabHGgVZBjEZBRDOce8ZCVj0nWWG5ibDBkQR0B4KZABNXDXKfhlGAcvOZC9NuyHaZBZBgRSQwLYNO5lnZBrJZCWQWbIK82LTgWqZAWbLwe8ZCm6afEwCNC6LbjlemtTIGPMeYhBzFbUJZBpkZCsNxZCgUZD'
+# You should paste your access_token here. You need the short lived access token , because we don't have version 2.3 of the long lived access token. post_query function works faster with this version. >>> See Instruction 1.
+access_token = 'YOUR ACCESS TOKEN'
 graph = facebook.GraphAPI(access_token, version='2.5')
 
 for user_id in user_ids:
