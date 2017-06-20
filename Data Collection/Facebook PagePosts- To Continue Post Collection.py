@@ -1,13 +1,14 @@
-import datascience
+import pandas as pd
 import facebook
 import requests
+import datascience
 from datascience import *
 import smtplib
 import os
 import pickle
 
 # You should paste your access_token here. You need the short lived access token , because we don't have version 2.3 of the long lived access token. post_query function works faster with this version. >>> See Instruction 1.
-access_token = 'EAACEdEose0cBABqGZCzZAZCMseIZBsniz4wG0KHDpZBYzn8Bqeyoo3yp05Aq4hWJ6mw2PKHDIpyrJ8ZAABZAxp8aUzVNJwK2qoLxlEZCZCMen7ikSDqV93kZAxKuCejNg5sAte49IQOcAluLSF89Mz1V6wO6FAeejXVGlaA3BpSgbgycLewq6gLpV3gRH5KNm7XIgZD'
+access_token = 'Your Access Token'
     
 
 all_done_FileNames = []
