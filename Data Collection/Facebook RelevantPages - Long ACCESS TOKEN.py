@@ -7,36 +7,12 @@ import smtplib
 import time
 global graph
         
-# We need here the long lived access token
-access_token = 'EAAI6JhLteM8BAHiIE4YZCv5OfAjugOw9W2xVnZBbxIZCA4KEZB4joRTDLT7vs3GteDs8F4nbM3wY09hDNQRhJZBUVltc3qrUgA2E8ULnwiaGcR1T7cKp7Yr403TZAmLXtbnnRKBB0XRPS5aFYlxB8iVak9ZBZBNKZA30ZD'
+# You should paste your access_token here. You need the short lived access token , because we don't have version 2.3 of the long lived access token. post_query function works faster with this version. >>> See Instruction 1.
+access_token = 'YOUR ACCESS TOKEN'
 graph = facebook.GraphAPI(access_token, version='2.6')
 
 # Put here the name of the facebook Page (e.g. https://www.facebook.com/bild.hamburg/ >>> bild.hamburg)
-# users = ['wzwuppertal', 'WAZBochum', 'HersbruckerZeitung', 'westfaelischer.anzeiger', 'LNOnline', 'reportMuenchen', 'abendblatt', 'badischezeitung.de', 'berlinerzeitung', 'bild',
-#'FrankfurterNeuePresse' ,'gaonline', 'kielernachrichten', 'ksta.fb', 'lvzonline', 'mannheimer.morgen', 'morgenpost', 'RemscheiderGA', 'WAZEssen', 'wnonline',
-#'mzwebde', 'siegenerzeitung', 'Erlanger.Nachrichten.Online', 'tlz.de', 'Volksfreund', 'nordseezeitung', 'RZKoblenz', 'gea.reutlingen','goettingertageblatt', 'pznews',
-#'junge.welt', 'rp.duesseldorf', 'stuttgarternachrichten', 'duesseldorf.feuerwehr', 'wznewsline', 'tag24.bielefeld', 'tag24.minden', 'tag24.paderborn',
-#'tag24.chemnitz', 'tag24.leipzig', 'tag24.zwickau', 'tag24.erzgebirge', 'tag24.vogtland', 'tag24.erfurt', 'tag24.dresden', 'szonline',
-#'HannoverscheAllgemeine', 'Nuernberger.Nachrichten.Online', 'rp.duisburg', 'tag24.gera', 'tag24.jena', 'WAZDuisburg', 'WESER.KURIER', '115821908508213', 'delmenhorster.kreisblatt',
-#'BILD.Bremen', 'Bremen', 'aachenernachrichten', 'aachenerzeitung', 'rshradio', 'rp.leverkusen', 'MAZonline', 'PNN.de', 'nnnonline', 'oz.rostock',
-#'taerfurt', 'nachrichten.in.kiel', 'shzonline', 'nuernberger.zeitung', 'huffingtonpostdepolitik', 'bergedorferzeitung', 'hamburgermorgenpost', 'mainpost',
-#'HeilbronnerStimme', 'suedwestpresse', 'wolfsburgerallgemeine', 'donaukurier.online', 'SWitySW', 'mittelbayerische', 'westfalenblatt', 'echoonline',
-#'RheinNeckarZeitung', 'delmenhorster.kreisblatt', 'ksta.lev', 'wuerzburg.erleben', 'blaulicht.wuerzburg', 'SchleiBote', 'schleswiger.nachrichten',
-#'166635820118970', 'nordfriesland.tageblatt', '279156428824958', 'flensburger.tageblatt', 'husumernachrichten', 'SchleswigHolstein', 'courier.nms',
-#'293833847330546', '1617631925184537', 'LNSegeberg', 'BremenVier', 'bild.hamburg', 'welthamburg', 'BILD.BB', 'huffingtonpostde', 'muenchner.merkur', 'SZmuenchen',
-#'sonntagsblatt.bayern', 'tzmuenchen', 'muenchner.merkur.landkreis', 'blaulichtinberlin', 'imwestenberlins', 'zittyberlin', 'bkurier',
-#'tagesspiegel', 'prenzlauerbergnachrichten', 'derfreitag', '482499455210420', 'reporterohnegrenzen', 'tip.Berlin', 'berichtausberlin', 'rp.koeln',
-#'schongauer.nachrichten', 'erdinger.dorfener.anzeiger', 'freisinger.tagblatt', 'dachauer.nachrichten', 'fuerstenfeldbrucker.tagblatt', 'gap.tagblatt',
-#'rundschau.online', 'faz', 'stuttgarterzeitung', 'dnnonline', 'NNLokales', 'pegnitzzeitung', 'kreiszeitung.de', 'DiepholzerKreisblatt',
-#'wochenwebschau', 'Weserreport', 'Weserreport', 'VerdenerAllerZeitung', 'rotenburger.kreiszeitung','11freunde','jungundnaiv','welt','netzpolitik','DasErste','ARD',
-#'tagesschau','Tatort','funkhauseuropa','artede','heuteshow','PULS','linksfraktion','Change.orgDeutschland','Bundesregierung','meinRTL',
-#'AngelaMerkel','focus.de','deutschlandfunk','dkultur','kmii.aktion','bamf.socialmedia','dw.deutschewelle','NDR.de','zeitonline','BuzzFeedDeutschland','taz.kommune',
-#'stern','HumanRightsWatchDeutschland','AuswaertigesAmt','proasyl','diezeit','zeitonline','zeitcampus','Tageblatt.lu','tageblatt','szmagazin','ihre.sz','DerSpiegel',
-#'SPIEGEL.TV','managermagazin','BamS','chrismon.evangelisch','SpiegelVideo','einestages','rponline','sat1nrw','JuedischeAllgemeine','NRW','waz','nordbayern.de',
-#'retter.tv','ZDF', 'toelzer.kurier','bayern3'']
-
-
-users = ['linkspartei']
+users = ['bild.hamburg', 'linkspartei']
 
 for user in users:
 
@@ -152,9 +128,9 @@ for user in users:
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.ehlo()
                 server.starttls()
-                server.login("vahid.vsh.68@gmail.com", "vahid9050931")
+                server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
                 msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked['id'])+" and the problem is: "+str(e)+"\nPlease COME TO ME!\n\n||Vahid S. J.||"
-                server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+                server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
                 server.quit()
             
         if page_liked['id'] not in all_page_ids:
@@ -202,30 +178,15 @@ for user in users:
                     print('Irrelevant', page_liked_profile['name'], "-->> ", page_liked_profile['category'])
 
             except Exception as e:
-
-                if e == "(#17) User request limit reached":
-                    
-                    global graph
-                    server = smtplib.SMTP('smtp.gmail.com', 587)
-                    server.ehlo()
-                    server.starttls()
-                    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-                    msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked['id'])+" and the problem is: "+str(e)+"\nI'm changing the access token in order to work the script again!\n\n||Vahid S. J.||"
-                    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
-                    server.quit()
-                    access_token = ""
-                    graph = facebook.GraphAPI(access_token, version='2.8')
-                    time.sleep(3650)
-
-                else:
                     
                     server = smtplib.SMTP('smtp.gmail.com', 587)
                     server.ehlo()
                     server.starttls()
-                    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
+                    server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
                     msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked['id'])+" and the problem is: "+str(e)+"\nPlease COME TO ME!\n\n||Vahid S. J.||"
-                    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+                    server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
                     server.quit()
+
         else:
             print("This page: "+str(page_liked['id'])+" has been already explored whether it is relevant or not!")
         
@@ -279,9 +240,9 @@ for user in users:
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.ehlo()
                 server.starttls()
-                server.login("vahid.vsh.68@gmail.com", "vahid9050931")
+                server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
                 msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked_1['id'])+" and the problem is: "+str(e)+"\nPlease COME TO ME!\n\n||Vahid S. J.||"
-                server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+                server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
                 server.quit()
 
         if page_liked_1['id'] not in all_page_ids:
@@ -330,28 +291,14 @@ for user in users:
 
             except Exception as e:
                 
-                if e == "(#17) User request limit reached":
-                    global graph
-                    server = smtplib.SMTP('smtp.gmail.com', 587)
-                    server.ehlo()
-                    server.starttls()
-                    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-                    msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked_1['id'])+" and the problem is: "+str(e)+"\nI'm changing the access token in order to work the script again!\n\n||Vahid S. J.||"
-                    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
-                    server.quit()
-                    access_token = "EAAPsgFwopnEBAI19K0TlAbWOnN2VCP4gjklg6v82tV2uxajwakBgpCb8HAui1gZBGQcq5tJIFyL1XmiUYQtUOffqKOJXyvZAYa1AcZBQgZBlGi2kR9Hz6qX8oay07JbOfaR9UZBLFaiAEXWwkZB9EsN6ZBZAsSFsxn0ZD"
-                    graph = facebook.GraphAPI(access_token, version='2.8')
-                    time.sleep(3650)
+                server = smtplib.SMTP('smtp.gmail.com', 587)
+                server.ehlo()
+                server.starttls()
+                server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
+                msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked_1['id'])+" and the problem is: "+str(e)+"\nPlease COME TO ME!\n\n||Vahid S. J.||"
+                server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
+                server.quit()
 
-                else:
-
-                    server = smtplib.SMTP('smtp.gmail.com', 587)
-                    server.ehlo()
-                    server.starttls()
-                    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-                    msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked_1['id'])+" and the problem is: "+str(e)+"\nPlease COME TO ME!\n\n||Vahid S. J.||"
-                    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
-                    server.quit()
         else:
             print("This page: "+str(page_liked_1['id'])+" has been already explored whether it is relevant or not!")
             
@@ -400,9 +347,9 @@ for user in users:
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
+    server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
     msg = "Hi,\n\n Page-liked --->>> Script is working so far very well and the number of pages for exploring-1: "+str(len(exploring_ids_1_selected)+"\n\n||Vahid S. J.||")
-    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+    server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
     server.quit()            
     # Explore the selected pages
     print(len(exploring_ids_1_new)) #For Testing
@@ -483,29 +430,15 @@ for user in users:
                     print('Irrelevant', page_liked_profile_2['name'], "-->> ", page_liked_profile_2['category'])
 
             except Exception as e:
-
-                if e == "(#17) User request limit reached":
-                    global graph
-                    server = smtplib.SMTP('smtp.gmail.com', 587)
-                    server.ehlo()
-                    server.starttls()
-                    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-                    msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked_2['id'])+" and the problem is: "+str(e)+"\nI'm changing the access token in order to work the script again!\n\n||Vahid S. J.||"
-                    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
-                    server.quit()
-                    access_token = "EAAPsgFwopnEBAI19K0TlAbWOnN2VCP4gjklg6v82tV2uxajwakBgpCb8HAui1gZBGQcq5tJIFyL1XmiUYQtUOffqKOJXyvZAYa1AcZBQgZBlGi2kR9Hz6qX8oay07JbOfaR9UZBLFaiAEXWwkZB9EsN6ZBZAsSFsxn0ZD"
-                    graph = facebook.GraphAPI(access_token, version='2.8')
-                    time.sleep(3650)
-
-                else:
-                    
-                    server = smtplib.SMTP('smtp.gmail.com', 587)
-                    server.ehlo()
-                    server.starttls()
-                    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-                    msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked_2['id'])+" and the problem is: "+str(e)+"\nPlease COME TO ME!\n\n||Vahid S. J.||"
-                    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
-                    server.quit()       
+  
+                server = smtplib.SMTP('smtp.gmail.com', 587)
+                server.ehlo()
+                server.starttls()
+                server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
+                msg = "Hi,\n\n Page-liked --->>> There is a problem for this page ID: "+str(page_liked_2['id'])+" and the problem is: "+str(e)+"\nPlease COME TO ME!\n\n||Vahid S. J.||"
+                server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
+                server.quit()
+                
         else:
             print("This page: "+str(page_liked_2['id'])+" has been already explored whether it is relevant or not!")
         
@@ -553,9 +486,9 @@ for user in users:
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
+    server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
     msg = "Hi,\n\n Page-liked --->>> Script is working so far very well and the number of pages for exploring-2: "+str(len(exploring_ids_2_selected)+"\n\n||Vahid S. J.||")
-    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+    server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
     server.quit()
     
     # Explore the selected pages
@@ -565,15 +498,6 @@ for user in users:
         pages_liked_2 = graph.get_connections(str(p_id), 'likes')
         j+=1 #For Testing
         print(j)
-
-        if j == 1000 or j==2000 or j==3000 or j==4000:
-            server = smtplib.SMTP('smtp.gmail.com', 587)
-            server.ehlo()
-            server.starttls()
-            server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-            msg = "Hi,\n\n Page-liked --->>> Script is working very well! and "+str(j)+" Pages have been explored up to now!\n\n||Vahid S. J.||"
-            server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
-            server.quit()
 
             
         if not pages_liked_2['data']:
@@ -639,18 +563,10 @@ for user in users:
     EXPLORING_IDS_2 = Table().with_column('Exploring_IDs_2', exploring_ids_2_modified)
     EXPLORING_IDS_2.to_csv('Exploring_IDs_2.csv')
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.login("vahid.vsh.68@gmail.com", "vahid9050931")
-    msg = "Hi,\n\n Page-liked --->>> Done! For this page: "+str(user)+"\nInformaion of this page is as follows:\n Number of pages for exploring-1: " + str(len(exploring_ids_1_modified))+"\n Number of pages for exploring-2: "+str(len(exploring_ids_2_modified))+"\n Number of relevant pages founded: "+str(len(relevant_page_ids_modified))+"\n Number of all pages explored: "+str(len(all_page_ids_modified))+"\n\n||Vahid S. J.||"
-    server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
-    server.quit()
-
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.ehlo()
 server.starttls()
-server.login("vahid.vsh.68@gmail.com", "vahid9050931")
+server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
 msg = "Hi,\n\n Page-liked --->>> Done! All relevant pages have been collected!\n\n||Vahid S. J.||"
-server.sendmail("vahid.vsh.68@gmail.com", "sadirijavadi.vahid@gmail.com", msg)
+server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
 server.quit()
