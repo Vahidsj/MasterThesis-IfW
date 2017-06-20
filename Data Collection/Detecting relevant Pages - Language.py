@@ -40,7 +40,7 @@ irrelevant_categories = ['Coach', 'Business Service', 'Sports Team', 'Consulting
 
 for filename in os.listdir('C:/Users/Vahid/Desktop/...'):
     
-    LikePages = Table.read_table("C:/Users/Vahid/Desktop/Relevant Pages-unmodified/"+str(filename), encoding="ISO-8859-1")
+    LikePages = Table.read_table("C:/Users/Vahid/Desktop/.../"+str(filename), encoding="ISO-8859-1")
 
     IDS = LikePages.column(0)
     page_liked_name = LikePages.column(1)
@@ -183,8 +183,6 @@ for filename in os.listdir('C:/Users/Vahid/Desktop/...'):
     server.ehlo()
     server.starttls()
     server.login("SenderEMAIL@EMAIL.EMAIL", "PASSWORD")
-     
     msg = "Hi,\n\nDetecting relevant Pages --->>> DONE!\nFor this Page: "+str(filename)+"\n\n||Vahid S. J.||"
-
     server.sendmail("SenderEMAIL@EMAIL.EMAIL", "RecipientEMAIL@EMAIL.EMAIL", msg)
     server.quit()
