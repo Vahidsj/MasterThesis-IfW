@@ -20,4 +20,4 @@ Main Targets of the project were:<br />
 **•**	Comparing the sentiments per state, city and gender of users as well as time of the comments<br />
 **•**	Visualizing and Communicating the Results
 
-Gathering Data<h4>
+Gathering Data<h4 />
