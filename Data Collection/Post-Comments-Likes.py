@@ -1,11 +1,11 @@
-import datascience
 import facebook
 import requests
 import numpy as np
 import sys
 from datascience import *
 
-access_token = 'EAAI6JhLteM8BAEEXVabHGgVZBjEZBRDOce8ZCVj0nWWG5ibDBkQR0B4KZABNXDXKfhlGAcvOZC9NuyHaZBZBgRSQwLYNO5lnZBrJZCWQWbIK82LTgWqZAWbLwe8ZCm6afEwCNC6LbjlemtTIGPMeYhBzFbUJZBpkZCsNxZCgUZD'
+# You should paste your access_token here. You need the short lived access token , because we don't have version 2.3 of the long lived access token. post_query function works faster with this version. >>> See Instruction 1.
+access_token = 'YOUR ACCESS TOKEN'
 graph = facebook.GraphAPI(access_token, version='2.3')
 
 #outputs
@@ -13,7 +13,7 @@ page_posts_comments_id = []
 post_comments_likes_name = []
 post_comments_likes_id = []
 
-table = Table.read_table('C:/Users\Vahid\Desktop/Book1.csv')
+table = Table.read_table('C:/Users\Vahid\Desktop/...')
 page_posts_id = table.column(0)
 comments_id = table.column(1)
 
@@ -29,9 +29,9 @@ def comment_like_query(like):
     
     page_posts_comments_id.append(str(p_p_c_id))
     post_comments_likes_name.append(str(like['name']))
-    post_comments_likes_id.append(str(like['id'])) # Here is a Problem - this String here is not the same as the actual USER ID is!!
+    post_comments_likes_id.append(str(like['id']))
     
-    print(str(like['id'])) # Here is a Problem - this String here is not the same as the actual USER ID is!!
+    print(str(like['id']))
         
     return (page_posts_comments_id,post_comments_likes_name, post_comments_likes_id)
 
