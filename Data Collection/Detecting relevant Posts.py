@@ -1,4 +1,5 @@
 from datascience import *
+import pandas as pd
 import numpy as np
 import smtplib
 import os
@@ -11,7 +12,7 @@ post_counter = 0
 counter = 0
 
 # Paste the file address of CSV files, Rember the Slash and Back Slash
-file_address = str('C:/Users/Vahid/Desktop/allFacebookPosts')
+file_address = str('C:/Users/Vahid/Desktop/...')
 
 for filename in os.listdir(str(file_address)):
 
