@@ -13,7 +13,7 @@ page_posts_comments_id = []
 post_comments_likes_name = []
 post_comments_likes_id = []
 
-table = Table.read_table('C:/Users\Vahid\Desktop/...')
+table = Table.read_table('C:/Users/Vahid\Desktop/...')
 page_posts_id = table.column(0)
 comments_id = table.column(1)
 
