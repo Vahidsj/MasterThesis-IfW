@@ -45,4 +45,4 @@ We decided to look at the 85 Facebook pages of newspapers. For each Facebook pag
 
 In the following figure, the process of data collection has been showed:
 
-
+![Gathering Data](https://github.com/Vahidsj/ProjectWork-IfW/blob/master/Image/Gathering%20Data.png)
