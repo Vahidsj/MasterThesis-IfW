@@ -11,18 +11,13 @@ This project work was designed and developed as a project to:
 **4. Communicate Data**
 
 Main Targets of the project were:
-•	Data Collection and Storage: Collecting relevant Facebook Comments, Post Descriptions, Attachments, Likes, etc. using Python
+**•	Data Collection and Storage:** Collecting relevant Facebook Comments, Post Descriptions, Attachments, Likes, etc. using Python<br />
+**• Recognition of relevant Facebook Pages:** Use of Network Nodes (Liked Pages by Pages) to recognize relevant Facebook Pages<br />
+**• Data Pre-Processing and Cleansing:** Design of Spelling Corrector using Python<br />
+**• Data Annotation:** Group Member of Instructors for Student Assistants to annotate Comments and Post Descriptions<br />
+**• Sentiment Analysis:** Classification using Doc2vec and Supervised Machine Learning Algorithms in Python<br />
+**• Topic Extraction:** Topic Prediction for Post and Attachment Description using LDA in PythonQuantifying the Qualitative Data<br />
+**•**	Comparing the sentiments per state, city and gender of users as well as time of the comments<br />
+**•**	Visualizing and Communicating the Results
 
-• Recognition of relevant Facebook Pages: Use of Network Nodes (Liked Pages by Pages) to recognize relevant Facebook Pages
-
-• Data Pre-Processing and Cleansing: Design of Spelling Corrector using Python
-
-• Data Annotation: Group Member of Instructors for Student Assistants to annotate Comments and Post Descriptions
-
-• Sentiment Analysis: Classification using Doc2vec and Supervised Machine Learning Algorithms in Python
-
-• Topic Extraction: Topic Prediction for Post and Attachment Description using LDA in PythonQuantifying the Qualitative Data
-
-•	Comparing the sentiments per state, city and gender of users as well as time of the comments
-
-•	Visualizing and Communicating the Results
+Gathering Data<h1>
