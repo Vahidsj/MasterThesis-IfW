@@ -5,10 +5,10 @@ Drawing on a novel dataset based on Facebook comments to newspaper articles on r
 
 This project work was designed and developed as a project to:
 
-**1. Store**\n
-**2. Retrieve**\n
-**3. Visualize**\n
-**4. Communicate Data**\n
+**1. Store**<br />
+**2. Retrieve**<br />
+**3. Visualize**<br />
+**4. Communicate Data**
 
 Main Targets of the project were:
 •	Data Collection and Storage: Collecting relevant Facebook Comments, Post Descriptions, Attachments, Likes, etc. using Python
