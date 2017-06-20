@@ -22,3 +22,27 @@ Main Targets of the project were:
 **•**	Visualizing and Communicating the Results
 
 ### Gathering Data ###
+
+We decided to look at the 85 Facebook pages of newspapers. For each Facebook page, we recorded the following information:
+
+**1.	Facebook Post – ID<br />
+2.	Facebook Post – Type (Link, Photo, Video, Status)<br />
+3.	Facebook Post – Created Time<br />
+4.	Facebook Post – Description<br />
+5.	Post Reactions – Like-/ Angry-/ Love-/ Wow-/ Sad-/ Haha-Count<br />
+6.	Post Attachment – Title<br />
+7.	Post Attachment – Description<br />
+8.	Post Attachment – Link<br />
+9.	Post Comment – ID<br />
+10.	Post Comment – Created Time<br />
+11.	Post Comment – User ID<br />
+12.	Post Comment – User Name<br />
+13.	Post Comment – Message<br />
+14.	Post Comment – Like<br />
+15.	Post Comment – Comment<br />
+16.	Post Comment Comment – Like<br />
+17.	Facebook User – Profile Picture**
+
+In the following figure, the process of data collection has been showed:
+
+
