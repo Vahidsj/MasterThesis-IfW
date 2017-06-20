@@ -1,7 +1,6 @@
 import pandas as pd
 import facebook
 import requests
-import datascience
 from datascience import *
 import smtplib
 import os
