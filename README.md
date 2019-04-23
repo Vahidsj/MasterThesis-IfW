@@ -3,7 +3,7 @@ During the “refugee crisis”, Facebook was blamed for providing a platform fo
 
 Drawing on a novel dataset based on Facebook comments to newspaper articles on refugees and migrants, we study the impact of such drastic events on social media users’ pro- or anti-refugee sentiments. Moreover, we identify the topics discussed in the context of these sentiments, e.g. economic issues, legal issues, or fear and anger. Our dataset has been compiled using a supervised machine-learning algorithm trained on several thousand manually annotated Facebook comments. It provides unique insights into public debates held on social media platforms. With this extraordinarily rich dataset, we assess how social media users’ sentiments towards refugees and migrants have developed over time. Articles’ and comments’ time stamps also allow us to investigate whether sentiments are driven by specific events and if so, how this impact varies across newspaper outlets and across regions in Germany. The paper thereby contributes to our understanding of how social media users communicate about politically relevant themes in times of crisis, and informs the debate on how sentiments towards minority groups evolve.
 
-This project work was designed and developed as a project to:
+This Master Thesis was designed and developed as a project to:
 
 **1. Store**<br />
 **2. Retrieve**<br />
